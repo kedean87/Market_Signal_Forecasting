@@ -1,4 +1,4 @@
-# News → Market / Signal Forecasting Prototype
+# News → Market / Signal Forecasting
 
 Combines **Natural Language Processing (NLP)** with **Time Series Forecasting** to predict future stock trends using news sentiment.  
 Author: **Kevin Edward Dean**
@@ -124,6 +124,21 @@ Outputs:
   - RMSE, MAE, R²
   - Directional accuracy
  
+Results:
+
+**PROPHET REGRESSION MODEL**
+![Prophet Regression Model Forecast](images/ForecastWithNewsSentimentInfluence.png)
+- ✅ RMSE on training period: 7.48
+
+![Prophet Regression Model Components](images/RegressionModelComponents.png)
+
+**NEURAL NETWORK REGRESSION**
+![Neural Network Regression with LSTM](images/NeuralNetworkStockPricePrediction.png)
+- 📉 MAE  : 2.4057
+- 📉 RMSE : 3.2785
+- 📈 R²    : 0.9709
+- 📊 Directional Accuracy: 53.41%
+
 ---
 
 ## Notes / Tips
