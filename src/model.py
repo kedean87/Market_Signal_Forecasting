@@ -14,7 +14,7 @@ class SentimentModel:
 		self.tokenizer = AutoTokenizer.from_pretrained(model_name)
 		self.model = AutoModelForSequenceClassification.from_pretrained(model_name)
 
-class RegressionModelProphet:
+class ProphetRegressionModel:
 	def __init__(self, data, stock_symbol):
 		self.model = Prophet(daily_seasonality=True)
 		self.model.add_regressor('sentiment')
@@ -125,8 +125,8 @@ class NeuralNetworkRegression:
 		plt.ylabel("Price")
 		plt.show()
 
-		# --- 7. Directional Accuracy ---
+		# Directional Accuracy
 		true_signal = np.sign(np.diff(self.y_true_actual))
 		pred_signal = np.sign(np.diff(self.y_pred_actual))
 		accuracy = np.mean(true_signal == pred_signal)
-		print(f"📊 Directional Accuracy: {accuracy*100:.2f}%")
+		print(f"Directional Accuracy: {accuracy*100:.2f}%")
