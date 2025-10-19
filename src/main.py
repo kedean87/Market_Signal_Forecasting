@@ -20,7 +20,7 @@ from model import *
 STOCK_SYMBOL = "AAPL"
 START_DATE = "2025-09-18"
 
-# get from https://newsapi.org/
+# get from https://newsapi.org/ subscription
 NEWS_API_KEY = "fde2f948fd9d43a396cba6d354e3e204"  
 COMPANY_NAME = "Apple"
 
@@ -29,6 +29,7 @@ def main():
 		company=COMPANY_NAME,
 		stock_symbol=STOCK_SYMBOL,
 		start_date=START_DATE,
+		news_api_key=NEWS_API_KEY
 		)
 	
 	ld.load_dataset()
@@ -71,10 +72,10 @@ def main():
 	X, y = [], []
 	for i in range(window, len(scaled)):
 		X.append(scaled[i-window:i])
-		y.append(scaled[i, 0])  # next-day close
+		y.append(scaled[i, 0]) 
 	X, y = np.array(X), np.array(y)
 
-	# --- 1. Split data into train/test (chronologically) ---
+	# Split data into train/test (chronologically)
 	train_size = int(len(X) * 0.8)
 	X_train, X_test = X[:train_size], X[train_size:]
 	y_train, y_test = y[:train_size], y[train_size:]
