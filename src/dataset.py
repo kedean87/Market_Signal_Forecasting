@@ -6,11 +6,9 @@ warnings.filterwarnings("ignore")
 import yfinance as yf
 import requests
 
-NEWS_API_KEY = "fde2f948fd9d43a396cba6d354e3e204"
-
 class Dataset:
-	def __init__(self, company, stock_symbol, start_date, end_date=datetime.today().strftime("%Y-%m-%d")):
-		self.url = f"https://newsapi.org/v2/everything?q={company}&from={start_date}&to={end_date}&language=en&sortBy=publishedAt&apiKey={NEWS_API_KEY}"
+	def __init__(self, company, stock_symbol, start_date, news_api_key, end_date=datetime.today().strftime("%Y-%m-%d")):
+		self.url = f"https://newsapi.org/v2/everything?q={company}&from={start_date}&to={end_date}&language=en&sortBy=publishedAt&apiKey={news_api_key}"
 		self.company = company
 		self.stock_symbol = stock_symbol
 		self.start_date = start_date
