@@ -23,25 +23,14 @@ The deployment process includes building a TensorFlow-based model inside a custo
 ## 🧩 Architecture Diagram (Mermaid)
 
 ```mermaid
-flowchart TD
-    A[User / Client Request] -->|POST /invocations| B[Flask API (serve.py)]
-    B --> C[Pipeline Logic (pipeline.py)]
-    C --> D[Model Artifacts (/opt/ml/model)]
-    D --> E[TensorFlow / PyTorch Inference]
-    E --> F[Response: Forecast Metrics]
-
-    subgraph Docker Container
-        B
-        C
-        D
-        E
-    end
-
-    subgraph AWS SageMaker Endpoint (ml.m6g.large)
-        DockerContainer[ARM64 Container Image]
-    end
-
-    DockerContainer --> F
+graph TD
+    A[Local Development / Build Phase] -->|Docker Build| B[Flask API: serve.py]
+    B -->|Package Model| C[Docker Image: market-signal-forecasting:arm64]
+    C -->|Push to ECR| D[AWS Elastic Container Registry]
+    D -->|Reference in Model| E[SageMaker Model]
+    E -->|Create Endpoint Config| F[SageMaker Endpoint]
+    F -->|Deploy| G[Deployed Inference Endpoint]
+    H[Client or Curl Request] -->|Invoke| G
 ```
 
 ---
