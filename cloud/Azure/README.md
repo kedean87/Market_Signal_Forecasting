@@ -9,12 +9,13 @@ The deployment was tested successfully using an **amd64 Docker image**.
 ## Table of Contents
 
 1. [Project Overview](#project-overview)  
-2. [Local Setup](#local-setup)  
-3. [Docker Build](#docker-build)  
-4. [Azure Container Apps Deployment](#azure-container-apps-deployment)  
-5. [Testing the Endpoint](#testing-the-endpoint)  
-6. [Problems & Solutions](#problems--solutions)  
-7. [Architecture Diagram](#architecture-diagram)  
+2. [Local Setup](#local-setup)
+3. [Architecture Diagram](#architecture-diagram) 
+4. [Docker Build](#docker-build)  
+5. [Azure Container Apps Deployment](#azure-container-apps-deployment)  
+6. [Testing the Endpoint](#testing-the-endpoint)  
+7. [Problems & Solutions](#problems--solutions)
+8. [Notes](#notes)
 
 ---
 
@@ -44,6 +45,8 @@ The deployment was tested successfully using an **amd64 Docker image**.
    ```
 
 ___
+
+## Architecture Diagram
 
 ```mermaid
 graph TD
