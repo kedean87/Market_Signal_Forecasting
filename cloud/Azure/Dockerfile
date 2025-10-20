@@ -27,10 +27,10 @@ RUN pip install --upgrade pip setuptools wheel \
     && pip install --no-cache-dir flask
 
 # Copy all application code from src2 into the container's /app directory
-COPY src2/ /app/
+COPY src/ /app/
 
 # Copy the model artifacts from your specified subdirectory
-COPY src2/opt/ml/model/ /app/
+COPY src/model/ /app/
 
 # Add a 'serve' executable for AWS SageMaker
 RUN echo '#!/bin/sh\npython serve.py' > /usr/local/bin/serve \
