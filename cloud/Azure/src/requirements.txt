@@ -1,0 +1,20 @@
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.4.0
+joblib>=1.4.0
+
+# Time series forecasting
+prophet>=1.1.5
+
+# NLP stack (CPU-optimized)
+transformers>=4.41.0
+
+yfinance
+
+requests
+
+scipy
+
+matplotlib>=3.8.0
+
+datetime
