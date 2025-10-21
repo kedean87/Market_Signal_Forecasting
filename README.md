@@ -18,9 +18,6 @@ The pipeline can be run end-to-end or modularly for **data fetching, sentiment a
 
 ---
 
-
----
-
 ## Flow Diagram
 
 ```mermaid
