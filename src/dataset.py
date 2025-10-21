@@ -27,13 +27,13 @@ class Dataset:
 
 		# Check if API returned an error
 		if data.get("status") != "ok":
-			print(f"⚠️ Warning: NewsAPI request failed: {data.get('message')}")
+			print(f"Warning: NewsAPI request failed: {data.get('message')}")
 			self.df = pd.DataFrame(columns=['date', 'text'])
 			return self.df
 
 		articles = data.get("articles", [])
 		if len(articles) == 0:
-			print("⚠️ No news articles found for this query.")
+			print("No news articles found for this query.")
 			self.df = pd.DataFrame(columns=['date', 'text'])
 			return self.df
 		
