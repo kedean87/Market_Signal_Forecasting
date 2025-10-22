@@ -140,7 +140,7 @@ gcloud ai endpoints predict <ENDPOINT_ID> \
 ```
 
 ![Google VertexAI Inference](images/market_signal_forecasting_inference.png)
-![Google VertexAI Logs Explorer](images/market_signal_logs_explorer.png)
+> Showing Prediction working in Vertex AI Deploy and Testing as well as a local terminal
 
 Common Problems & Fixes:
 1. `No such file or directory` → create a JSON file instead of inline string.
@@ -172,6 +172,9 @@ curl -X POST http://localhost:8080/predict \
 - Use GCP Console → Vertex AI → Endpoints → Logs tab to inspect container logs.
 - Use `INFO:werkzeug` logs to confirm HTTP requests hitting Flask.
 - Ensure `"predictions"` key exists in JSON response.
+
+![Google VertexAI Logs Explorer](images/market_signal_logs_explorer.png)
+> Showing the Logs Explorer with output coming from the prediction function in serve.py
 
 ---
 
