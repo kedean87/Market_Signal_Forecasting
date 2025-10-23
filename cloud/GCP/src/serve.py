@@ -152,7 +152,7 @@ def predict():
     final_json = json.dumps(response)
     print(f"Final response body: {final_json}")
         
-    return jsonify(response)
+    return jsonify(final_json)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get('AIP_HTTP_PORT', 8080)), debug=False, threaded=True)
